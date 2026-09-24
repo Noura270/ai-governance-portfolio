@@ -42,3 +42,9 @@ Create a structured inventory of OrbitTel's AI systems, classify each system acc
 - Who is affected by its outputs?
 - What level of governance is required?
 - What initial governance gaps need to be addressed?
+
+## Project Structure
+
+- `ai-system-inventory.csv` — Structured inventory of AI systems
+- `eu-ai-act-classification.md` — Risk classification rationale
+- `nist-rmf-mapping.md` — Initial governance gap mapping
