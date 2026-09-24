@@ -1,187 +1,242 @@
-# EU AI Act Classification
+# EU AI Act Risk Classification — OrbitTel Communications
 
-## Purpose
-
-This document provides an initial EU AI Act classification of OrbitTel Communications' AI systems based on their documented intended purpose and current use case.
-
-The classification should be reviewed if the intended purpose, decision-making role, affected parties, or deployment context changes.
+**Classification Date:** September 2026
+**Prepared by:** AI Governance Programme Office
+**Review Due:** March 2027
 
 ---
 
-## System-001: Customer Churn Prediction
+## Classification Framework
 
-**Business Function:** Customer Operations
+This assessment applies the EU AI Act risk-based classification approach to the AI systems recorded in the OrbitTel AI System Inventory.
 
-**AI Purpose:** Predict customers likely to leave the service.
+Classification is based on the system's intended purpose, deployment context, affected persons, and role in the relevant business process.
 
-### Classification
+This document is an AI governance case-study assessment and is not legal advice.
 
-**Initial Classification:** Not identified as High-Risk based on the documented use case.
+## Risk Categories Used
+
+| Classification           | Governance Treatment                                                                                                                |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| High Risk                | Additional requirements apply where the system falls within the applicable high-risk categories                                     |
+| Transparency Obligations | Specific transparency requirements may apply, including Article 50                                                                  |
+| Minimal / Other Risk     | No high-risk classification identified from the documented intended purpose; other legal and governance obligations may still apply |
+
+---
+
+# 1. OT-AI-001 — Customer Churn Prediction
+
+**Classification:** MINIMAL / NOT IDENTIFIED AS HIGH-RISK
+
+### Legal Basis
+
+The documented purpose is customer retention prioritisation.
+
+The system does not currently determine customer eligibility, terminate services, or make another consequential decision falling within an identified high-risk category.
 
 ### Rationale
 
-The system predicts the likelihood that a customer may leave OrbitTel and supports customer retention activities.
+The system predicts the probability that a customer may leave OrbitTel and prioritises customers for possible retention activity.
 
-The use of customer usage and subscription data does not, by itself, make the system High-Risk under the EU AI Act.
+The use of customer data does not by itself establish high-risk classification.
 
-The current use case does not indicate that the system is used for employment, education, law enforcement, migration, biometric identification, or the specific high-risk use cases listed in Annex III.
+The classification must be reassessed if the system becomes part of an automated decision process that materially affects customers.
 
 ### Governance Considerations
 
-- Data protection and privacy
-- Data quality and accuracy
-- Potential unfair customer treatment
-- Transparency
-- Human oversight for significant customer decisions
+* Document the decision boundary.
+* Maintain appropriate data governance.
+* Monitor prediction accuracy.
+* Assess potential unfair treatment resulting from retention prioritisation.
+* Reassess classification following material purpose changes.
 
-### Review Trigger
+### Current Compliance / Governance Gap
 
-The classification should be reassessed if the system is used to deny or restrict access to services, determine eligibility, or make other significant decisions about customers.
+The system's intended purpose and prohibited decision boundaries should be formally documented.
+
+**Priority:** Medium
 
 ---
 
-## System-002: Customer Service GenAI Assistant
+# 2. OT-AI-002 — Customer Service GenAI Assistant
 
-**Business Function:** Customer Operations
+**Classification:** TRANSPARENCY OBLIGATIONS / ARTICLE 50 ASSESSMENT
 
-**AI Purpose:** Assist customer service agents with customer inquiries and response suggestions.
+### Legal Basis
 
-### Classification
-
-**Initial Classification:** Limited/Transparency Risk — not identified as High-Risk based on the documented use case.
+Article 50(1) requires providers of AI systems intended to interact directly with natural persons to ensure that those persons are informed that they are interacting with an AI system, subject to the conditions and exceptions in the Regulation.
 
 ### Rationale
 
-The system assists employees by generating response suggestions for customer inquiries.
+The current system assists human customer service agents.
 
-Based on the documented purpose, the system is not making employment decisions or making autonomous decisions about customers.
+The agent remains responsible for the final customer response.
 
-Because customers may interact with AI-generated content or receive AI-generated responses, applicable transparency requirements should be considered.
+Therefore, the current deployment is primarily an internal decision-support and content-generation tool.
+
+If OrbitTel changes the deployment so that the AI directly communicates with customers, Article 50(1) must be assessed and implemented where applicable.
 
 ### Governance Considerations
 
-- Transparency when customers interact directly with AI
-- Accuracy and hallucination controls
-- Human review of generated responses
-- Protection of customer information
-- Logging and monitoring
+* Human review of customer-facing responses.
+* Hallucination and accuracy controls.
+* Vendor governance.
+* Logging and traceability.
+* Customer information protection.
+* Transparency assessment before direct customer interaction.
 
-### Review Trigger
+### Current Compliance / Governance Gap
 
-The classification should be reassessed if the system begins making autonomous decisions about customers or is used for employment-related decisions.
+The boundary between internal agent assistance and direct customer interaction is not formally documented.
+
+**Priority:** Medium
 
 ---
 
-## System-003: Fiber Network Fault Prediction
+# 3. OT-AI-003 — Fiber Network Fault Prediction
 
-**Business Function:** Network Operations
+**Classification:** HIGH RISK — ANNEX III(2), SUBJECT TO SCOPE CONFIRMATION
 
-**AI Purpose:** Identify potential fiber network faults before they affect customers.
+### Legal Basis
 
-### Classification
+Annex III includes AI systems intended to be used as safety components in the management and operation of critical digital infrastructure.
 
-**Initial Classification:** Not identified as High-Risk based on the documented use case.
+OrbitTel's case study defines this system as supporting the operation of critical digital network infrastructure.
 
 ### Rationale
 
-The system predicts potential faults in OrbitTel's fiber network using network performance and fault data.
+The system predicts network failures and identifies network elements requiring intervention.
 
-The current use case is intended to support network maintenance and operational planning.
+Because the intended purpose has been defined as supporting the management and operation of critical digital infrastructure, the system requires a formal assessment of whether it meets the Annex III(2) conditions.
 
-The system is not currently documented as an AI safety component of a critical infrastructure system covered by the relevant high-risk provisions.
+The classification is therefore recorded as **High Risk — subject to scope confirmation**, rather than treating the classification as automatically established.
 
-### Governance Considerations
+### Obligations / Governance Considerations
 
-- Prediction accuracy
-- False positives and false negatives
-- Operational impact of incorrect predictions
-- Monitoring and model performance
-- Human review before significant maintenance actions
+If the system is confirmed as a high-risk AI system, governance should address applicable requirements including:
 
-### Review Trigger
+* risk management;
+* data and data governance;
+* technical documentation;
+* record keeping and logging;
+* transparency and information for deployers;
+* human oversight;
+* accuracy, robustness and cybersecurity;
+* post-market monitoring and incident management, as applicable.
 
-The classification should be reassessed if the system becomes a safety component whose failure could directly create risks to health or safety within a regulated critical infrastructure context.
+### Current Compliance Gap
+
+OrbitTel has not yet formally documented whether the network infrastructure meets the regulatory definition and whether the AI system functions as a qualifying safety component.
+
+### Required Gate
+
+**Formal legal and technical scope assessment before relying on the High-Risk classification for compliance planning.**
+
+**Priority:** Critical
 
 ---
 
-## System-004: Telecom Fraud Detection
+# 4. OT-AI-004 — Telecom Fraud Detection
 
-**Business Function:** Fraud Management
+**Classification:** MINIMAL / NOT IDENTIFIED AS HIGH-RISK
 
-**AI Purpose:** Detect unusual usage patterns that may indicate misuse or fraudulent activity.
+### Legal Basis
 
-### Classification
+The documented purpose is fraud detection and investigation prioritisation.
 
-**Initial Classification:** Not identified as High-Risk based on the documented use case.
+The system is not operated by law-enforcement authorities and does not autonomously impose adverse action on customers.
 
 ### Rationale
 
-The system identifies unusual usage patterns that may indicate misuse or fraudulent activity.
+The system generates fraud indicators and investigation queues.
 
-For example, it may identify a residential broadband subscription whose usage pattern appears consistent with commercial use.
+A human investigator must review the case before consequential customer action.
 
-The system is intended to identify cases for investigation rather than automatically determine that a customer committed fraud.
-
-The documented use case does not currently fall within the specific high-risk areas listed in Annex III.
+The governance risk is therefore significant from an operational and customer-impact perspective, but the documented use case does not by itself establish an Annex III high-risk classification.
 
 ### Governance Considerations
 
-- False positives and false negatives
-- Fairness and potential discrimination
-- Customer data protection
-- Human investigation before adverse action
-- Transparency and explainability
+* Human investigation before consequential action.
+* False-positive and false-negative monitoring.
+* Fairness assessment.
+* Evidence preservation.
+* Customer-impact escalation.
+* Data protection controls.
+* Vendor accountability.
 
-### Review Trigger
+### Current Compliance / Governance Gap
 
-The classification should be reassessed if the system is used to make automated decisions that significantly affect customers' access to services or rights.
+The human decision boundary and escalation process should be formally documented.
+
+**Priority:** High
 
 ---
 
-## System-005: Network Capacity Forecasting
+# 5. OT-AI-005 — Network Capacity Forecasting
 
-**Business Function:** Network Planning
+**Classification:** MINIMAL / NOT IDENTIFIED AS HIGH-RISK
 
-**AI Purpose:** Forecast future network capacity requirements to support network planning.
+### Legal Basis
 
-### Classification
+The system forecasts network capacity requirements and supports infrastructure planning.
 
-**Initial Classification:** Not identified as High-Risk based on the documented use case.
+It does not make decisions about natural persons.
 
 ### Rationale
 
-The system forecasts future network traffic and capacity requirements to support network planning decisions.
+The system is currently a pilot used to support infrastructure planning.
 
-The system provides planning information rather than making decisions about individuals.
-
-Based on the documented purpose, the system does not correspond to the specific high-risk use cases listed in Annex III.
+Its outputs are forecasts and planning scenarios rather than decisions affecting individual customers.
 
 ### Governance Considerations
 
-- Forecast accuracy
-- Data quality
-- Model performance monitoring
-- Business continuity considerations
-- Human review of major planning decisions
+* Forecast accuracy.
+* Data quality.
+* Scenario validation.
+* Model monitoring.
+* Production-readiness criteria.
+* Human approval of significant planning decisions.
 
-### Review Trigger
+### Current Compliance / Governance Gap
 
-The classification should be reassessed if the system's purpose changes or if it becomes part of a regulated safety-critical infrastructure use case.
+A formal production governance gate has not yet been established.
+
+**Priority:** High — Production Gate
 
 ---
 
-## Overall Classification Summary
+# Classification Summary
 
-| System ID | System Name | Initial Classification |
-|---|---|---|
-| System-001 | Customer Churn Prediction | Not identified as High-Risk |
-| System-002 | Customer Service GenAI Assistant | Limited/Transparency Risk |
-| System-003 | Fiber Network Fault Prediction | Not identified as High-Risk |
-| System-004 | Telecom Fraud Detection | Not identified as High-Risk |
-| System-005 | Network Capacity Forecasting | Not identified as High-Risk |
+| System                                     | Classification                               | Priority |
+| ------------------------------------------ | -------------------------------------------- | -------- |
+| OT-AI-001 Customer Churn Prediction        | Minimal / Not High-Risk                      | Medium   |
+| OT-AI-002 Customer Service GenAI Assistant | Transparency / Article 50 Assessment         | Medium   |
+| OT-AI-003 Fiber Network Fault Prediction   | High Risk — Annex III(2), Scope Confirmation | Critical |
+| OT-AI-004 Telecom Fraud Detection          | Minimal / Not High-Risk                      | High     |
+| OT-AI-005 Network Capacity Forecasting     | Minimal / Not High-Risk                      | High     |
 
-## Important Note
+---
 
-This is an initial governance classification for the OrbitTel case study, not a legal opinion.
+# Reclassification Triggers
 
-EU AI Act classification depends on the intended purpose and the specific way an AI system is used. A change in purpose, decision-making role, deployment context, or affected parties may change the classification.
+Classification must be reassessed when:
+
+* the intended purpose changes;
+* AI outputs become automated decisions;
+* human oversight is materially reduced;
+* the affected population changes;
+* the system becomes part of critical infrastructure operations;
+* a new regulated use case is introduced;
+* the system begins directly interacting with natural persons;
+* the deployment geography or regulatory scope changes;
+* a material model or vendor change occurs.
+
+---
+
+## Assessment Limitation
+
+This classification is a fictional OrbitTel case-study assessment designed to demonstrate practical AI governance methodology.
+
+It should not be interpreted as a legal opinion.
+
+Formal regulatory classification requires confirmation of the actual deployment context, provider/deployer status, geographic scope, system architecture, and intended purpose.
