@@ -1,1 +1,2 @@
 System ID,System Name,Business Function,AI Purpose,System Owner,Data Type,Affected Parties
+System-001,Customer Churn Prediction,Customer Operations,Predict customers likely to leave the service,Head of Customer Analytics,Customer usage and subscription data,Customers
