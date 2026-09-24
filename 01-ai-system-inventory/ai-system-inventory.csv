@@ -1,2 +1,6 @@
 System ID,System Name,Business Function,AI Purpose,System Owner,Data Type,Affected Parties,AI Type,Vendor Status,Deployment Status
 ystem-001,Customer Churn Prediction,Customer Operations,Predict customers likely to leave the service,Head of Customer Analytics,Customer usage and subscription data,Customers,Predictive ML,In-house,Production
+System-002,Customer Service GenAI Assistant,Customer Operations,Assist customer service agents with customer inquiries and response suggestions,Head of Customer Operations,Customer interactions and service information,Customers and employees,Generative AI,Vendor,Production
+System-003,Fiber Network Fault Prediction,Network Operations,Identify potential fiber network faults before they affect customers,Head of Network Operations,Network performance and fault data,Customers,Predictive ML,In-house,Production
+System-004,Telecom Fraud Detection,Fraud Management,Detect suspicious usage patterns and potential fraudulent activity,Head of Fraud Management,Usage and transaction data,Customers,Predictive ML,Hybrid,Production
+System-005,Network Capacity Forecasting,Network Planning,Forecast future network capacity requirements to support network planning,Head of Network Planning,Network traffic and capacity data,Customers,Predictive ML,In-house,Pilot
